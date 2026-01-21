@@ -1,4 +1,4 @@
-# PHecatePEP: A machine learning strategy to predict peptide toxicity
+# HecatePEP: A machine learning strategy to predict peptide toxicity
 
 **HecatePEP** is a machine learning pipeline developed to predict whether a given peptide sequence has citotoxic properties.  
 This repository contains all code, datasets, models, and outputs necessary to reproduce the training process, make new predictions, and evaluate model performance.
@@ -33,8 +33,8 @@ We recommend creating a virtual environment to avoid conflicts.
 You can set up your environment by running:
 
 ```bash
-python -m venv perseu-env
-source perseu-env/bin/activate  # On Windows use: perseu-env\Scripts\activate
+python -m venv hecate-env
+source hecate-env/bin/activate  # On Windows use: hecate-env\Scripts\activate
 ```
 ```bash
 pip install -r requirements.txt
@@ -54,7 +54,7 @@ You will see the following menu:
 
       2 - TESTING MODEL
 
-Choose option 2 - TESTING MODEL if you want to classify new sequences using the pretrained model (PERSEU_MODEL.pkl included in this repository).
+Choose option 2 - TESTING MODEL if you want to classify new sequences using the pretrained model.
 
 You will be asked to enter the file path to your dataset.
 
