@@ -1,6 +1,6 @@
-# PerseuCPP: A Machine Learning Strategy to Predict Cell-Penetrating Peptides and Their Uptake Efficiency
+# PHecatePEP: A machine learning strategy to predict peptide toxicity
 
-**PerseuCPP** is a machine learning pipeline developed to predict whether a given peptide sequence has cell-penetrating properties and estimate its uptake efficiency.  
+**HecatePEP** is a machine learning pipeline developed to predict whether a given peptide sequence has citotoxic properties.  
 This repository contains all code, datasets, models, and outputs necessary to reproduce the training process, make new predictions, and evaluate model performance.
 
 ---
@@ -8,27 +8,15 @@ This repository contains all code, datasets, models, and outputs necessary to re
 ## Repository Structure
 
 
-├── DATASETS/              # Datasets used for training and testing
+├── CD08/                 # Datasets used for training and testing and the respective model
 
-├── PERFORMANCE/           # Performance metrics for each dataset
+├── CD09/                 # Datasets used for training and testing and the respective model
 
-├── RESULTS/               # Prediction results on each dataset
+├── Independent/          # The independent dataset
 
-├── PERSEU-MODEL.pkl       # Trained model for CPP classification
-
-├── PERSEU-EFFICIENCY.pkl  # Efficiency prediction model 
-
-├── PERSEUcpp.py           # Main script: feature extraction, model training, and prediction
-
-├── aminos.json            # Amino acid group and ID mappings
+├── HecatePEP.py           # Main script: feature extraction, model training, and prediction
 
 ├── utils.py               # Helper functions for feature extraction
-
-├── wrong predicted sequences.csv
-
-├── tests-results.csv
-
-├── cpp-test.fasta         # Example file for testing
 
 └── README.md              # This file
 
@@ -51,14 +39,14 @@ source perseu-env/bin/activate  # On Windows use: perseu-env\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-## How to Run PERSEUcpp
+## How to Run HecatePEP
 
 ### 1. Predicting New Sequences
 
 Execute the main script:
 
 ```bash
-python PERSEUcpp.py
+python HecatePEP.py
 ```
 
 You will see the following menu:
@@ -76,17 +64,18 @@ Accepted input formats:
 * CSV: CSV file containing a single column with peptide sequences.
 
 Example:
-Data path: cpp-test.fasta
+Data path: IndependentDataset/independent.fasta
 
-The prediction results will be saved into the RESULTS/ directory as results-cpp-mlcpp.csv, containing:
+The prediction results will be saved into the main directory as Results.csv, containing:
 * seq: the original peptide sequence
 * prob: probability score of being a CPP
 * Classification: predicted class (1 = CPP, 0 = non-CPP)
+Also, a cpps_test_matrix.csv was save to, with all sequences and the respective descriptors
 
 
 ### 2. Training a New Model (Optional)
 
-If you wish to retrain the model using your own datasets, select option 1 - TRAINING MODEL after executing PerseuCPP.py.
+If you wish to retrain the model using your own datasets, select option 1 - TRAINING MODEL after executing HecatePEP.py.
 
 You will be prompted to provide:
 * The path to your positive dataset (sequences labeled as CPPs)
